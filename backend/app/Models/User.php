@@ -88,6 +88,14 @@ class User extends Authenticatable
     }
 
     /**
+     * Get the projects that the user belongs to.
+     */
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class)->withTimestamps();
+    }
+
+    /**
      * Get the timesheets for the user.
      */
     public function timesheets()
